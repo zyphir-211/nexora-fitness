@@ -1,0 +1,37 @@
+/* NEXORA FITNESS 9.8.3 — controlled appearance options. */
+#v94PresetPicker .v94-preset-grid{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+@media(max-width:760px){#v94PresetPicker .v94-preset-grid{grid-template-columns:repeat(3,minmax(0,1fr))!important}}
+@media(max-width:420px){#v94PresetPicker .v94-preset-grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}}
+.nx983-appearance-options{margin-top:16px;padding:18px;border:1px solid var(--nx-line,var(--line));border-radius:20px;background:linear-gradient(145deg,color-mix(in srgb,var(--nx-surface2,var(--panel2)) 68%,transparent),var(--nx-surface,var(--panel)));box-shadow:var(--nx-shadow-sm,0 5px 18px rgba(0,0,0,.05))}
+.nx983-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;margin-bottom:15px}
+.nx983-head>div{min-width:0}.nx983-kicker{display:block;margin-bottom:7px;color:var(--nx-muted,var(--muted));font-size:9px;font-weight:850;letter-spacing:.14em}
+.nx983-head h4{margin:0 0 8px!important;color:var(--nx-ink,var(--text));font-size:16px!important;line-height:1.35!important;letter-spacing:-.02em}
+.nx983-head p{margin:0;color:var(--nx-muted,var(--muted));font-size:11px;line-height:1.55;max-width:62ch}
+.nx983-mark{width:34px;height:34px;flex:0 0 34px;display:grid;place-items:center;border-radius:12px;background:color-mix(in srgb,var(--nx-mint,var(--accent)) 13%,var(--nx-surface,var(--panel)));color:var(--nx-mint,var(--accent));font-size:18px}
+.nx983-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px}
+.nx983-control{display:flex;min-width:0;align-items:center;justify-content:space-between;gap:12px;padding:12px;border:1px solid var(--nx-line,var(--line));border-radius:13px;background:var(--nx-surface,var(--panel))}
+.nx983-control>span{display:grid;gap:4px;min-width:0}.nx983-control b{color:var(--nx-ink,var(--text));font-size:11px;line-height:1.35}.nx983-control small{color:var(--nx-muted,var(--muted));font-size:9px;line-height:1.4}
+.nx983-control select{width:auto;max-width:48%;min-width:118px;padding:8px 26px 8px 9px;border:1px solid var(--nx-line,var(--line));border-radius:10px;background:var(--nx-surface2,var(--panel2));color:var(--nx-ink,var(--text));font-size:10px;font-weight:750}
+.nx983-preview-wrap{margin-top:15px;padding:12px;border:1px dashed var(--nx-line,var(--line));border-radius:14px}
+.nx983-preview-wrap>div:first-child{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px}.nx983-preview-wrap>div:first-child b{color:var(--nx-ink,var(--text));font-size:10px}
+.nx983-preview-card{display:flex;align-items:center;gap:11px;padding:13px;border:1px solid var(--nx-line,var(--line));border-radius:15px;background:var(--nx-surface,var(--panel));box-shadow:var(--nx-shadow-sm,0 5px 18px rgba(0,0,0,.05));transition:all .2s ease}
+.nx983-preview-icon{width:35px;height:35px;flex:0 0 35px;display:grid;place-items:center;border-radius:11px;background:color-mix(in srgb,var(--nx-mint,var(--accent)) 14%,var(--nx-surface2,var(--panel2)));color:var(--nx-mint,var(--accent));font-size:17px;font-weight:900}
+.nx983-preview-card>div:nth-child(2){display:grid;gap:3px;min-width:0}.nx983-preview-card small{color:var(--nx-muted,var(--muted));font-size:8px;font-weight:850;letter-spacing:.1em}.nx983-preview-card strong{color:var(--nx-ink,var(--text));font-size:18px;line-height:1.3}.nx983-preview-card span{color:var(--nx-muted,var(--muted));font-size:9px}.nx983-preview-card>i{margin-left:auto;color:var(--nx-mint,var(--accent));font-size:8px;font-style:normal;letter-spacing:2px;white-space:nowrap}
+.nx983-actions{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:13px}.nx983-actions [role=status]{color:var(--nx-muted,var(--muted));font-size:9px}
+/* Controlled global appearance effects */
+body.nx98[data-nx983-density="compact"] .panel,body.nx98[data-nx983-density="compact"] .exercise-card,body.nx98[data-nx983-density="compact"] .planner-day{padding:13px!important}
+body.nx98[data-nx983-density="spacious"] .panel,body.nx98[data-nx983-density="spacious"] .exercise-card,body.nx98[data-nx983-density="spacious"] .planner-day{padding:25px!important}
+body.nx98[data-nx983-cards="flat"] :is(.panel,.exercise-card,.history-item,.guide-card,.planner-day,.pr-card,.achievement,.stat-card,.launch-card){box-shadow:none!important;background:var(--nx-surface)!important}
+body.nx98[data-nx983-cards="outlined"] :is(.panel,.exercise-card,.history-item,.guide-card,.planner-day,.pr-card,.achievement,.stat-card,.launch-card){box-shadow:none!important;border-width:1.5px!important;background:transparent!important}
+body.nx98[data-nx983-corners="soft"] :is(.panel,.exercise-card,.history-item,.guide-card,.planner-day,.pr-card,.achievement,.stat-card,.launch-card,.nx983-preview-card){border-radius:21px!important}
+body.nx98[data-nx983-corners="crisp"] :is(.panel,.exercise-card,.history-item,.guide-card,.planner-day,.pr-card,.achievement,.stat-card,.launch-card,.nx983-preview-card){border-radius:8px!important}
+body.nx98[data-nx983-background="clean"]{background-image:none!important}
+body.nx98[data-nx983-background="soft"]{background-image:radial-gradient(ellipse at 9% 0%,color-mix(in srgb,var(--nx-mint) 6%,transparent),transparent 38%)!important}
+body.nx98[data-nx983-background="ambient"]{background-image:radial-gradient(ellipse at 9% 0%,color-mix(in srgb,var(--nx-mint) 12%,transparent),transparent 42%),radial-gradient(ellipse at 95% 25%,color-mix(in srgb,var(--nx-blue) 9%,transparent),transparent 38%)!important}
+body.nx98[data-nx983-buttons="solid"] .btn-primary,body.nx98[data-nx983-buttons="solid"] .dock-add{background:var(--nx-mint)!important}
+body.nx98[data-nx983-buttons="outline"] .btn-primary{background:transparent!important;border:1px solid var(--nx-mint)!important;color:var(--nx-ink)!important;box-shadow:none!important}
+body.nx98[data-nx983-icons="simple"] .dock-icon{background:transparent!important;box-shadow:none!important}
+body.nx98[data-nx983-motion="reduced"] *,body.nx98[data-nx983-motion="reduced"] *:before,body.nx98[data-nx983-motion="reduced"] *:after{transition-duration:.01ms!important;animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important}
+body.nx98[data-nx983-motion="full"] .panel,body.nx98[data-nx983-motion="full"] .exercise-card{transition:transform .24s ease,box-shadow .24s ease}
+@media(max-width:650px){.nx983-controls{grid-template-columns:1fr}.nx983-control select{min-width:112px;max-width:46%}.nx983-actions{align-items:flex-start;flex-direction:column}}
+@media(prefers-reduced-motion:reduce){.nx983-preview-card{transition:none!important}}

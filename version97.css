@@ -1,0 +1,111 @@
+/* NEXORA FITNESS 9.7.0 — calmer dashboard, restored Settings, and shared heading rhythm. */
+:root{--nx-accent:#42d6a5;--nx-blue:#45b9d8}
+body.nexora-97{--accent:#42d6a5;--accent2:#45b9d8;--bg:#080e10;--panel:#111b20;--panel2:#1b2a30;--text:#f1f7f7;--muted:#a2b6ba;--line:#30464d}
+/* Fix the global heading rhythm rather than patching individual page titles. */
+h1,h2,h3,h4{line-height:1.36!important;letter-spacing:-.025em}
+h1{margin-block:.18em .52em}
+h2{margin-block:.16em .54em}
+h3{margin-block:.12em .48em}
+h4{margin-block:.1em .42em}
+.eyebrow+h1,.eyebrow+h2,.eyebrow+h3,.eyebrow+h4{margin-top:.58rem!important}
+h1+p,h2+p,h3+p,h4+p{margin-top:.42rem!important}
+h1+p,h2+p,h3+p,h4+p{margin-top:.48em!important;line-height:1.58}
+.eyebrow{margin-bottom:9px!important;line-height:1.35}
+.section-heading{display:flex;align-items:flex-end;justify-content:space-between;gap:18px;margin:28px 0 17px!important}
+.section-heading>div:first-child{display:grid;gap:10px!important;min-width:0}
+.section-heading h2{margin:0!important;line-height:1.25!important}
+.section-heading .eyebrow{margin:0!important}
+.panel-heading{align-items:flex-start;gap:16px;margin-bottom:16px!important}
+.panel-heading>div{display:grid;gap:8px!important;min-width:0}
+.panel-heading h3{margin:0!important}
+.panel-heading .eyebrow{margin:0 0 2px!important}
+.dashboard-welcome-copy{display:grid;gap:10px!important}
+.dashboard-welcome-copy h2{font-size:clamp(20px,2.7vw,30px)!important;line-height:1.34!important;margin:0!important}
+.dashboard-welcome-copy p:not(.eyebrow){margin:0!important;line-height:1.58;max-width:58ch}
+/* Simpler and more focused dashboard. */
+.command-hero.hero{min-height:235px;padding:23px 25px 19px;grid-template-columns:minmax(0,1.1fr) minmax(150px,.65fr);gap:15px;border-radius:24px;background:linear-gradient(135deg,color-mix(in srgb,var(--panel) 94%,var(--accent) 6%),var(--panel));box-shadow:0 14px 42px rgba(0,0,0,.16)}
+.command-hero .hero-index{display:none}
+.command-hero .hero-copy{align-self:center}
+.command-hero .hero h1,.command-hero h1{font-size:clamp(29px,3.6vw,42px);line-height:1.22!important;margin:8px 0 10px!important}
+.command-hero .hero-sub{max-width:46ch;line-height:1.55;margin:0 0 14px}
+.command-hero .hero-clock .clock-ring{width:150px;height:150px}
+.command-hero .hero-progress{padding-top:4px}
+.dashboard-welcome.dashboard-v7{padding:19px 21px!important;gap:17px!important;border-radius:21px;background:linear-gradient(120deg,color-mix(in srgb,var(--panel) 95%,var(--accent) 5%),var(--panel));border:1px solid var(--line)}
+.dashboard-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px!important}
+.dashboard-stats .dash-stat{min-width:0;padding:12px 13px!important;border-radius:14px!important;background:var(--panel2);border:1px solid var(--line)}
+.dashboard-stats .dash-stat span{font-size:8px;letter-spacing:.1em}
+.dashboard-stats .dash-stat strong{font-size:clamp(18px,2vw,25px);line-height:1.25}
+.dashboard-stats .dash-stat small{font-size:9px;line-height:1.35}
+.dashboard-insights.dashboard-v7-grid{grid-template-columns:minmax(0,1.25fr) repeat(2,minmax(0,1fr));gap:12px!important;align-items:stretch}
+.dashboard-insights .panel{padding:17px!important;border-radius:18px!important;box-shadow:0 9px 28px rgba(0,0,0,.13)}
+.dashboard-activity{grid-row:span 2}
+.dashboard-next,.dashboard-pr,.dashboard-milestone{min-height:128px;display:flex;flex-direction:column;justify-content:space-between}
+.dashboard-insights h3{font-size:15px;line-height:1.28!important;margin:0 0 7px!important}
+.dashboard-insights .small-note{line-height:1.5;margin:0}
+.dashboard-launchpad{gap:11px!important;margin-block:16px 4px}
+.dashboard-launchpad .launch-card{border-radius:17px;padding:16px}
+.ms-today-focus{margin:15px 0;padding:13px 15px;border-radius:17px}
+/* Old Settings page: expose the built-in controls and five colour themes. */
+#settingsView .nx-appearance-panel{background:linear-gradient(135deg,color-mix(in srgb,var(--panel) 95%,var(--accent) 5%),var(--panel))}
+#settingsView .nx-appearance-panel>.small-note{max-width:70ch;line-height:1.58}
+#settingsView .nx-appearance-panel #themeSelect,#settingsView .nx-appearance-panel #glowSlider{width:100%}
+#v94PresetPicker.v94-preset-block{display:block!important;margin:12px 0 15px;padding:13px;border:1px solid var(--line);border-radius:15px;background:var(--panel2)}
+#v94PresetPicker .v94-preset-title{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
+#v94PresetPicker .v94-preset-title b{font-size:9px;letter-spacing:.12em;color:var(--muted)}
+#v94PresetPicker .v94-preset-title small{font-size:9px;color:var(--muted)}
+#v94PresetPicker .v94-preset-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+#v94PresetPicker .v94-preset{min-width:0;display:grid;justify-items:center;gap:6px;padding:10px 6px;border:1px solid var(--line);border-radius:13px;background:var(--panel);color:var(--text);text-align:center}
+#v94PresetPicker .v94-preset[aria-pressed=true]{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent),0 8px 20px color-mix(in srgb,var(--accent) 13%,transparent)}
+#v94PresetPicker .v94-preset strong{font-size:10px;line-height:1.25}
+#v94PresetPicker .v94-preset small{font-size:8px;color:var(--muted)}
+#v94PresetPicker .v94-preset-swatch{width:34px;height:34px;border-radius:11px}
+#v94PresetPicker .v94-appearance-note{margin:10px 0 0;color:var(--muted);font-size:9px;line-height:1.5}
+.nx-appearance-panel .setting-row{margin-top:11px}
+/* Use the approved heart-and-pulse identity consistently. */
+.brand-logo,.boot-mark img{object-fit:cover;border-radius:13px;box-shadow:0 5px 20px rgba(0,0,0,.18)}
+.ms-brand-name{font-size:12px;letter-spacing:.08em}
+.ms-brand-sub{letter-spacing:.12em}
+.app-footer{margin-top:28px;padding-top:16px}
+/* Make the nav and panels calm, aligned, and not over-glowy. */
+.tabs.glass-dock{backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);border-radius:23px;box-shadow:0 12px 35px rgba(0,0,0,.20)}
+.tabs.glass-dock .tab{transition:background .18s,border-color .18s,color .18s}
+.panel{transition:border-color .2s,box-shadow .2s}
+.more-menu{border-radius:18px}
+@media(max-width:900px){.dashboard-insights.dashboard-v7-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-activity{grid-row:span 2}}
+@media(max-width:700px){.command-hero.hero{min-height:0;padding:18px;grid-template-columns:minmax(0,1fr) auto}.command-hero .hero-clock .clock-ring{width:118px;height:118px}.dashboard-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.dashboard-welcome.dashboard-v7{grid-template-columns:1fr!important}}
+@media(max-width:520px){.dashboard-insights.dashboard-v7-grid{grid-template-columns:1fr}.dashboard-activity{grid-row:auto}#v94PresetPicker .v94-preset-grid{grid-template-columns:repeat(3,minmax(0,1fr))}.section-heading{align-items:flex-start;flex-direction:column;gap:11px!important}.section-heading .heading-actions{width:100%}}
+@media(max-width:380px){.command-hero.hero{grid-template-columns:1fr}.command-hero .hero-clock{display:none}.dashboard-stats .dash-stat{padding:10px!important}}
+@media(prefers-reduced-motion:reduce){.tabs.glass-dock .tab,.panel{transition:none!important}}
+
+/* 9.7 dashboard refresh: one compact daily hero, clear summary, less visual noise. */
+#workoutView>.command-hero.hero{min-height:190px!important;padding:22px 25px 16px!important;grid-template-columns:minmax(0,1.2fr) minmax(132px,.55fr)!important;gap:18px!important;border-radius:26px!important;background:radial-gradient(ellipse at 82% 20%,color-mix(in srgb,var(--accent2) 17%,transparent),transparent 43%),linear-gradient(130deg,color-mix(in srgb,var(--panel) 91%,var(--accent) 9%),var(--panel))!important;border:1px solid color-mix(in srgb,var(--accent) 20%,var(--line))!important;box-shadow:0 18px 48px rgba(0,0,0,.15)!important}
+#pageTitle{font-size:clamp(30px,4vw,44px)!important;line-height:1.28!important;letter-spacing:-.04em!important}
+.command-hero .hero-sub{max-width:48ch;line-height:1.62!important;color:var(--muted)}
+.dashboard-welcome.dashboard-v7{padding:16px 19px!important;gap:14px!important;border-radius:20px!important;background:linear-gradient(115deg,color-mix(in srgb,var(--panel) 96%,var(--accent) 4%),var(--panel))!important}
+.dashboard-stats{gap:10px!important}
+.dashboard-stats .dash-stat{border-radius:16px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.025)}
+.dashboard-insights .panel{border-radius:19px!important;box-shadow:0 8px 26px rgba(0,0,0,.12)!important}
+#workoutView .section-heading{margin-top:26px!important}
+#workoutView .notice-row{margin-top:2px}
+@media(max-width:700px){#workoutView>.command-hero.hero{min-height:0!important;padding:17px!important;grid-template-columns:minmax(0,1fr) auto!important}}
+@media(max-width:380px){#workoutView>.command-hero.hero{grid-template-columns:1fr!important}}
+/* Condense the Home overview; keep the full training plan one click away. */
+.nx-training-details{margin:16px 0 28px;border:1px solid var(--line);border-radius:19px;background:linear-gradient(120deg,color-mix(in srgb,var(--panel) 96%,var(--accent) 4%),var(--panel));overflow:hidden;box-shadow:0 9px 28px rgba(0,0,0,.12)}
+.nx-training-details>summary{display:flex;align-items:center;gap:13px;padding:16px 18px;cursor:pointer;list-style:none;min-height:68px}
+.nx-training-details>summary::-webkit-details-marker{display:none}
+.nx-training-details>summary:focus-visible{outline:3px solid var(--accent);outline-offset:-4px;border-radius:16px}
+.nx-training-summary-icon{display:grid;place-items:center;flex:0 0 38px;height:38px;border-radius:12px;background:color-mix(in srgb,var(--accent) 14%,var(--panel2));color:var(--accent);font-size:19px}
+.nx-training-summary-copy{display:grid;gap:5px;min-width:0}
+.nx-training-summary-copy strong{font-size:13px;line-height:1.35}
+.nx-training-summary-copy small{font-size:10px;line-height:1.5;color:var(--muted)}
+.nx-training-summary-action{margin-left:auto;display:flex;gap:8px;align-items:center;white-space:nowrap;font-size:10px;font-weight:700;color:var(--accent)}
+.nx-training-details[open]>summary{border-bottom:1px solid var(--line);background:color-mix(in srgb,var(--panel2) 60%,transparent)}
+.nx-training-details-content{padding:17px;display:grid;gap:15px}
+.nx-training-details-content>.section-heading:first-child{margin-top:0!important}
+.nx-training-details-content>.two-col{gap:16px}
+@media(max-width:520px){.nx-training-details>summary{padding:14px;gap:10px}.nx-training-summary-action{font-size:0}.nx-training-summary-action span{font-size:16px}.nx-training-details-content{padding:12px}}
+/* Keep title leading consistent with the wider heading-label gaps. */
+#pageTitle,.section-heading h2,.dashboard-insights h3{line-height:1.36!important}
+
+/* The overview cards already summarize progress; keep the top hero uncluttered. */
+#workoutView~.command-hero .hero-progress,.command-hero .hero-progress{display:none!important}

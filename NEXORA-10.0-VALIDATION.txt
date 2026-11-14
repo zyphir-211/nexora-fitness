@@ -1,0 +1,23 @@
+NEXORA FITNESS 10.0 BETA — VALIDATION REPORT
+
+Browser (embedded Chromium with simulated local storage): 12/12 checks passed.
+- App version title and official icon asset loaded.
+- Sticky top header and fixed bottom dock present.
+- High contrast remains off by default.
+- All nine sections navigated successfully.
+- More menu opened and closed with Escape.
+- Logo returned to Today.
+- First-workout action opened Planner.
+- No horizontal overflow at 11 widths (320–1600 px).
+- No page or console errors.
+
+Source/package checks:
+- JavaScript syntax checks passed for all app scripts.
+- All CSS stylesheets parsed with no syntax errors.
+- HTML IDs are unique.
+- Local HTML references and service-worker cache assets exist.
+- Manifest JSON is valid and identifies NEXORA FITNESS 10.0 Beta.
+- ZIP integrity is checked separately at packaging.
+
+Limitations: Browser tests used embedded app files and temporary in-memory storage.
+They do not certify storage persistence or PWA installation in the user's Chromebook profile.

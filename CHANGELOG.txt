@@ -1,0 +1,76 @@
+NEXORA FITNESS 10.0 Beta — Nebula Design Preview
+- Complete visual rebuild across all app sections.
+- New deep-navy, violet and cyan design system; redesigned dashboard, forms, cards, charts, menus and fixed bottom navigation.
+- Existing NEXORA icon, workout engine, storage key and backup format preserved.
+- Responsive layouts and light/dark appearance support.
+
+NEXORA FITNESS 9.9.0.1 — PERSISTENT ANIMATED LOGO
+- Kept the NEXORA heart-and-pulse logo visible in the sticky header across app sections and while scrolling.
+- Added a restrained heartbeat pulse and slow green-to-blue halo.
+- Made the header logo return to Today and close the More menu.
+- Respects system reduced-motion and the app's reduced-motion setting.
+
+NEXORA FITNESS — RELEASE HISTORY
+================================
+
+Use the in-app What’s New page (More → What’s new, or Browse → Personalization → What’s new) to search releases by version, feature or fix. This file is the portable copy of the same history.
+
+9.9.0 — Training & recovery
+- Smart weekly planner with preferred training-day suggestions.
+- Schedule saved custom routines without replacing the weekly plan.
+- Session Recovery card with local checkpoints and safe discard.
+- Training Workspace with exercise/set summary, preview and Planner shortcut.
+- Searchable in-app Update History.
+
+9.8.3 — Appearance options
+- Expanded colour choices and controlled appearance settings.
+- Additional spacing, card, corner, background, button, navigation and motion options.
+
+9.8.2 — Interaction update
+- NEXORA logo returns to Today.
+- First-workout prompt opens the Planner.
+- Dashboard shortcuts and internal links route to their intended sections.
+
+9.8.1 — Navigation hotfix
+- Restored floating bottom navigation.
+- Positioned More menu below its trigger and above page content.
+
+9.8 Beta — Fusion redesign
+- New Today, Train, Progress and Browse layouts.
+- Responsive navigation, light/dark modes and updated cards and charts.
+
+9.7.0 — NEXORA identity and settings refinement
+- NEXORA branding and heart-and-pulse identity.
+- Simplified dashboard, colour-named themes and restored familiar Settings.
+- High contrast remains available but is off by default.
+
+9.6.2 — Today and Browse navigation
+- Today focus metrics and searchable Browse directory.
+- Pin frequently used destinations and keep History accessible in Browse.
+
+9.5.0 — Customization Studio
+- App identity, design profiles, colour controls and dashboard customization.
+- Import/export of design profiles. The unrestricted editor was later replaced by simpler Settings in 9.7.
+
+9.4.1 — Appearance reliability fixes
+- Fixed theme reset, theme selection after backup import and version-label synchronization.
+
+9.4.0 — Appearance overhaul
+- Refined NEXORA visual identity, cards, navigation and appearance themes.
+
+9.3.0 — Training Flow
+- Dedicated active-workout screen, set controls, rest timer, exercise guidance and completion review.
+
+9.2.0 — Settings and smoothness
+- Redesigned Settings experience, search, categories, previews and save feedback.
+
+9.1.0 — Design and accessibility
+- Visual system refinements, keyboard navigation, focus states, screen-reader improvements and responsive fixes.
+
+9.0.0 — Personalization
+- Personal profile, dashboard preferences, planner preferences, achievements and training insights.
+
+Future releases
+- Add each release to the RELEASES list in version99.js and to this file.
+- Record version, release date, new features, fixes and any known limitations.
+- Keep release notes factual and distinguish tested behavior from device-only checks.

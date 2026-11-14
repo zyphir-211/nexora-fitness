@@ -1,0 +1,102 @@
+/* NEXORA FITNESS 9.9.0.1 — Persistent animated brand mark. */
+body.nx98 .topbar,
+body .topbar {
+  position: sticky !important;
+  top: 0 !important;
+  z-index: 1100 !important;
+  isolation: isolate;
+}
+.brand {
+  position: relative;
+  min-height: 54px;
+  align-items: center;
+}
+.brand-emblem {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  flex: 0 0 48px;
+  border-radius: 16px;
+  isolation: isolate;
+}
+.brand-emblem::before {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: 19px;
+  background: conic-gradient(from 0deg,
+    #8cf16c 0deg,
+    #46d9ad 105deg,
+    #36bff0 220deg,
+    #8cf16c 360deg);
+  opacity: .38;
+  filter: blur(7px);
+  transform-origin: center;
+  animation: nexora-logo-aura 12s linear infinite;
+  pointer-events: none;
+}
+.brand-emblem::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border: 1px solid color-mix(in srgb, var(--accent2, #36bff0) 38%, transparent);
+  border-radius: 15px;
+  box-shadow: 0 0 16px color-mix(in srgb, var(--accent, #8cf16c) 18%, transparent);
+  opacity: .75;
+  animation: nexora-logo-ring 4.8s ease-in-out infinite;
+  pointer-events: none;
+}
+.brand-logo {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 42px !important;
+  height: 42px !important;
+  flex: none;
+  object-fit: cover;
+  border-radius: 13px;
+  transform-origin: center;
+  will-change: transform, filter;
+  animation: nexora-logo-heartbeat 4.2s ease-in-out infinite;
+}
+@keyframes nexora-logo-heartbeat {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 2px rgba(86, 220, 180, .22)); }
+  7% { transform: scale(1.045); filter: drop-shadow(0 0 7px rgba(86, 220, 180, .48)); }
+  14% { transform: scale(1.006); }
+  21% { transform: scale(1.032); filter: drop-shadow(0 0 5px rgba(65, 190, 235, .4)); }
+  30% { transform: scale(1); }
+}
+@keyframes nexora-logo-aura {
+  to { transform: rotate(360deg); }
+}
+@keyframes nexora-logo-ring {
+  0%, 100% { opacity: .48; box-shadow: 0 0 10px color-mix(in srgb, var(--accent, #8cf16c) 14%, transparent); }
+  50% { opacity: .92; box-shadow: 0 0 19px color-mix(in srgb, var(--accent2, #36bff0) 30%, transparent); }
+}
+@media (max-width: 390px) {
+  .brand-emblem { width: 41px; height: 41px; flex-basis: 41px; }
+  .brand-logo { width: 36px !important; height: 36px !important; border-radius: 11px; }
+  .brand-emblem::before { inset: -2px; }
+  .brand-emblem::after { border-radius: 13px; }
+}
+/* Respect both the system accessibility preference and NEXORA's own setting. */
+@media (prefers-reduced-motion: reduce) {
+  .brand-emblem::before, .brand-emblem::after, .brand-logo { animation: none !important; transition: none !important; }
+}
+body.x-reduced-motion .brand-emblem::before,
+body.x-reduced-motion .brand-emblem::after,
+body.x-reduced-motion .brand-logo,
+body[data-nx983-motion="reduced"] .brand-emblem::before,
+body[data-nx983-motion="reduced"] .brand-emblem::after,
+body[data-nx983-motion="reduced"] .brand-logo,
+body.reduce-motion .brand-emblem::before,
+body.reduce-motion .brand-emblem::after,
+body.reduce-motion .brand-logo {
+  animation: none !important;
+  transition: none !important;
+}
+body.high-contrast .brand-emblem::before { display: none; }
+body.high-contrast .brand-emblem::after { border-width: 2px; opacity: 1; }
