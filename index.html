@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#080b18">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="NEXORA FITNESS 10.0 Beta is a redesigned training, progress and wellness experience with locally stored workout records.">
+  <title>NEXORA FITNESS 10.0 Beta — Nebula Design Preview</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="version91.css">
+  <link rel="stylesheet" href="version92.css">
+  <link rel="stylesheet" href="version93.css">
+  <link rel="stylesheet" href="version94.css">
+  <link rel="stylesheet" href="morphset.css">
+  <link rel="stylesheet" href="version96.css">
+  <link rel="stylesheet" href="version962.css">
+  <link rel="stylesheet" href="version97.css">
+  <link rel="stylesheet" href="version98.css">
+  <link rel="stylesheet" href="interactions982.css">
+  <link rel="stylesheet" href="appearance983.css">
+  <link rel="stylesheet" href="version99.css">
+  <link rel="stylesheet" href="logo-motion991.css">
+  <link rel="stylesheet" href="v100-redesign.css">
+  <link rel="icon" href="nexora-icon-192.png" type="image/png">
+</head>
+<body data-theme="emerald" data-nx98-mode="system">
+  <a class="v91-skip-link" id="v91SkipLink" href="#workoutView">Skip to main content</a>
+  <div class="boot-screen" id="bootScreen" aria-hidden="true">
+    <div class="boot-mark"><img src="nexora-icon-192.png" alt="" style="width:54px;height:54px;border-radius:15px"></div>
+    <div class="boot-line"><i></i></div>
+    <p>PREPARING YOUR DESIGN SPACE</p>
+  </div>
+
+  <header class="topbar" aria-label="Nexora Fitness header">
+    <a class="brand" href="#top" aria-label="NEXORA FITNESS home"><span class="brand-emblem"><img class="brand-logo" src="nexora-icon-192.png" alt=""></span><span class="ms-brand-wrap"><span class="ms-brand-name">NEXORA FITNESS</span><small class="ms-brand-sub">HEALTH · TRAINING · PROGRESS</small></span></a>
+    <div class="top-status"><span class="live-dot"></span><span id="dayLabel">TODAY</span><span class="status-divider"></span><span id="clockLabel">--:--</span></div>
+    <div class="top-actions"><button class="icon-btn" id="focusBtn" title="Focus mode" aria-label="Focus mode">⛶</button><button class="icon-btn more-trigger" id="moreMenuBtn" aria-label="Open more sections and options" aria-haspopup="true" aria-controls="moreMenu" aria-expanded="false">•••</button></div>
+  </header>
+
+  <main id="top" class="app-shell" aria-label="Nexora Fitness main content">
+    <section class="hero panel command-hero" aria-label="Training dashboard">
+      <div class="hero-copy">
+        <div class="hero-kicker"><span class="live-dot"></span><span id="phaseEyebrow">YOUR TRAINING SPACE</span><span class="hero-kicker-line"></span><span id="dateLine">Today</span></div>
+        <h1 id="pageTitle">Make today<br><span>count.</span></h1>
+        <p class="hero-sub">A calmer, clearer place to plan, train, and keep track of what matters.</p>
+        <div class="hero-actions"><button class="btn btn-primary" id="timerStartBtn">Start session timer</button><button class="btn btn-quiet" id="timerResetBtn">Reset timer</button></div>
+      </div>
+      <div class="hero-clock">
+        <div class="clock-ring" id="clockRing"><div><small>SESSION TIMER</small><strong id="timerDisplay">00:00</strong><span id="timerLabel">READY</span></div></div>
+        <div class="timer-caption"><span class="timer-caption-dot"></span> Keep your pace comfortable</div>
+      </div>
+      <div class="hero-progress">
+        <div class="progress-meta"><span>SESSION PROGRESS</span><strong id="progressText">0%</strong></div>
+        <div class="liquid-track"><div class="liquid-fill" id="progressFill"><i></i><i></i><i></i></div></div>
+        <div class="progress-foot"><span id="setsDoneText">0 of 0 sets complete</span><span id="scheduleStatus">Your planned training window</span></div>
+      </div>
+      <div class="hero-index">01 <span>/</span> DAILY DASHBOARD</div>
+    </section>
+
+    <nav class="tabs glass-dock" aria-label="Main sections">
+      <button class="tab active" data-tab="workout"><span class="dock-icon">⌂</span><span class="dock-label">Today</span></button>
+      <button class="tab" data-tab="builder"><span class="dock-icon">▤</span><span class="dock-label">Train</span></button>
+      <button class="tab" data-tab="progress"><span class="dock-icon">⌁</span><span class="dock-label">Progress</span></button>
+      <button class="tab" data-tab="browse"><span class="dock-icon">⌕</span><span class="dock-label">Browse</span></button>
+      <button class="dock-add" id="createWorkoutBtn" aria-label="Create a new workout" title="Create a new workout"><span>+</span></button>
+    </nav>
+    <div class="more-menu glass-panel" id="moreMenu" hidden>
+      <button data-more-tab="planner">Planner <small>Organize your week</small></button>
+      <button data-more-tab="insights">Insights <small>Training patterns</small></button>
+      <button data-more-tab="guide">Exercise guide <small>Movement library</small></button>
+      <button data-more-tab="settings">Settings <small>App preferences</small></button>
+    </div>
+
+    <section id="workoutView" class="view active" aria-hidden="false" aria-labelledby="pageTitle" tabindex="-1">
+      <section class="dashboard-welcome dashboard-v7">
+        <div class="dashboard-welcome-copy"><p class="eyebrow">YOUR TRAINING OVERVIEW</p><h2>Your day, simplified.</h2><p>Your activity, next session and progress — together in one calm view.</p></div>
+        <div class="dashboard-stats">
+          <div class="dash-stat"><span>TODAY</span><strong id="dashDay">—</strong><small>Training plan</small></div>
+          <div class="dash-stat"><span>SETS</span><strong id="dashSets">0/0</strong><small>Completed today</small></div>
+          <div class="dash-stat"><span>PROGRESS</span><strong id="dashProgress">0%</strong><small>Session complete</small></div>
+          <div class="dash-stat"><span>SESSIONS</span><strong id="xDashSessions">0</strong><small>Saved in your log</small></div>
+        </div>
+      </section>
+      <section class="ms-today-focus" id="msTodayFocus" aria-label="Pinned focus metrics" hidden></section>
+      <section class="dashboard-insights dashboard-v7-grid" id="xDashboardInsights" aria-label="Your training overview">
+        <article class="panel dashboard-activity">
+          <div class="panel-heading"><div><p class="eyebrow">LAST 7 DAYS</p><h3>Weekly activity</h3></div><span class="activity-total" id="xWeekTotal">0 sessions</span></div>
+          <div class="activity-chart" id="xWeeklyActivity" aria-label="Saved workout activity for the last seven days"></div>
+          <div class="activity-legend"><span><i></i> Saved workout</span><span>Based on your local history</span></div>
+        </article>
+        <article class="panel dashboard-next"><div><p class="eyebrow">UP NEXT</p><h3 id="xNextSessionTitle">Your next session</h3><p id="xNextSessionText" class="small-note">Your weekly plan will appear here.</p></div><button class="btn btn-outline btn-small" id="xOpenPlanner">Open planner</button></article>
+        <article class="panel dashboard-pr"><div><p class="eyebrow">PERSONAL RECORD</p><h3 id="xDashboardPR">No records yet</h3><p id="xDashboardPRText" class="small-note">Saved session highlights will appear here.</p></div><button class="btn btn-quiet btn-small" id="xOpenProgress">View progress</button></article>
+        <article class="panel dashboard-milestone"><div><p class="eyebrow">NEXT MILESTONE</p><h3 id="xDashboardMilestone">First session</h3><p id="xDashboardMilestoneText" class="small-note">Save a session to begin your history.</p></div><div class="milestone-track"><span id="xMilestoneFill"></span></div></article>
+      </section>
+      <section class="dashboard-launchpad dashboard-v7-actions" aria-label="Quick start and guides">
+        <article class="launch-card launch-primary"><div class="launch-icon">↗</div><div><span class="launch-label">PICK UP WHERE YOU LEFT OFF</span><h3>Continue today's plan</h3><p>Log a set, follow your pace, and let your progress update as you go.</p></div><a href="#workoutHeading" class="launch-link">Go to exercises <span>→</span></a></article>
+        <article class="launch-card"><div class="launch-icon guide-icon">⌁</div><div><span class="launch-label">LEARN THE MOVEMENTS</span><h3>Form & movement guide</h3><p>Practical cues, easier alternatives, and recovery guidance.</p></div><button class="launch-link tab" data-tab="guide">Explore guides <span>→</span></button></article>
+        <article class="launch-card"><div class="launch-icon history-icon">◷</div><div><span class="launch-label">SEE YOUR JOURNEY</span><h3>Progress that makes sense</h3><p>Review saved sessions and consistency over time.</p></div><button class="launch-link tab" data-tab="progress">View progress <span>→</span></button></article>
+      </section>
+      <div class="section-heading"><div><p class="eyebrow">TODAY'S PLAN</p><h2 id="workoutHeading">Workout day</h2></div><div class="heading-actions"><span class="pill" id="workoutTypePill">45 MIN</span><button class="btn btn-outline btn-small" id="editTargetsBtn">Edit plan</button></div></div>
+      <div class="notice-row" id="weakSideNotice"><span class="notice-icon">↔</span><span>For one-sided movements, start with the side that feels less coordinated and match the same comfortable reps on the other side.</span></div>
+      <div class="phase-grid" id="phaseGrid"></div>
+      <div class="finish-row"><button class="btn btn-primary" id="finishWorkoutBtn">Finish &amp; save workout</button><button class="btn btn-outline" id="bumpTargetsBtn">Adjust next session +1 rep</button></div><div class="skip-row"><label for="skipReasonSelect">Skipped exercise note (optional)</label><select id="skipReasonSelect"><option value="">No skipped exercise</option><option>Short on time</option><option>Equipment unavailable</option><option>Needed extra recovery</option><option>Movement felt uncomfortable</option><option>Other</option></select></div>
+      <div class="two-col">
+        <section class="panel tool-panel"><div class="panel-heading"><div><p class="eyebrow">QUICK TOOLS</p><h3>Session controls</h3></div><span class="panel-icon">◷</span></div>
+          <div class="tool-grid">
+            <button class="tool-btn" id="warmupBtn"><b>05:00</b><span>Guided warm-up</span></button>
+            <button class="tool-btn" id="tempoBtn"><b>3 · 1 · 1</b><span>Tempo pacer</span></button>
+            <button class="tool-btn" id="tabataBtn"><b>20 / 10</b><span>Interval timer</span></button>
+            <button class="tool-btn" id="isoBtn"><b>00:10</b><span>Friday hold</span></button>
+          </div>
+          <div class="timer-row"><label for="customSeconds">Custom timer (seconds)</label><div class="inline-controls"><input type="number" id="customSeconds" min="1" max="3600" value="60"><button class="btn btn-outline btn-small" id="customTimerBtn">Set timer</button><button class="btn btn-quiet btn-small" id="add15Btn">+15s</button></div></div>
+          <div class="timer-row"><label>Unilateral switch</label><button class="btn btn-outline btn-small" id="switchSideBtn">Start 5-second switch</button></div>
+          <div class="timer-row"><label>Audio cues</label><button class="btn btn-quiet btn-small" id="muteBtn" aria-pressed="false">Sound: on</button></div>
+        </section>
+        <section class="panel prep-panel"><div class="panel-heading"><div><p class="eyebrow">BEFORE & AFTER</p><h3>Recovery checklist</h3></div><span class="panel-icon">✦</span></div>
+          <label class="checkline"><input type="checkbox" id="snackCheck"><span><b>Pre-session snack, if hungry</b><small>A familiar snack and some water can be useful before activity.</small></span></label>
+          <label class="checkline"><input type="checkbox" id="mealCheck"><span><b>Post-session meal</b><small>Have a regular, satisfying meal after training.</small></span></label>
+          <div class="water-block"><div><b>Water check-ins</b><small>Tap when you take a drink; no target required.</small></div><div class="water-buttons" id="waterButtons"><button aria-label="Log a drink">◉</button><button aria-label="Log a drink">◉</button><button aria-label="Log a drink">◉</button><button aria-label="Log a drink">◉</button></div></div>
+          <button class="text-link" id="snackIdeasBtn">Open quick snack ideas ↗</button>
+        </section>
+      </div>
+      <section class="panel coach-panel"><div class="panel-heading"><div><p class="eyebrow">COACHING NOTE</p><h3 id="dailyTipTitle">Today's training cue</h3></div><span class="panel-icon">◎</span></div><p id="dailyTip">Use a controlled range of motion. Stop if you feel pain, dizziness, or unusual discomfort.</p><button class="text-link" id="nextTipBtn">Another tip ↗</button></section>
+    </section>
+
+    <section id="browseView" class="view" aria-hidden="true" aria-labelledby="msBrowseTitle" tabindex="-1">
+      <div class="ms-browse-hero">
+        <div><p class="eyebrow">YOUR NEXORA FITNESS LIBRARY</p><h2 id="msBrowseTitle">Browse your space.</h2><p>Find your training tools, records and app preferences.</p></div>
+        <div class="ms-browse-count"><strong id="msBrowseCount">8</strong><span>DESTINATIONS</span></div>
+      </div>
+      <section class="panel ms-browse-search-panel">
+        <label class="ms-browse-search"><span aria-hidden="true">⌕</span><input id="msBrowseSearch" type="search" placeholder="Search training, history, planner and settings…" autocomplete="off" aria-label="Search app sections"><kbd> / </kbd></label>
+        <p class="small-note">Search across sections and tools. Your workout records stay in their original sections.</p>
+      </section>
+      <section class="panel ms-browse-pinned-panel" aria-labelledby="msBrowsePinnedTitle">
+        <div class="ms-browse-heading"><div><p class="eyebrow">YOUR SHORTCUTS</p><h3 id="msBrowsePinnedTitle">Pinned destinations</h3><p class="small-note">Pin the sections you open most often. Reorder them or remove a shortcut at any time.</p></div><span class="ms-browse-pill" id="msBrowsePinCount">0 PINNED</span></div>
+        <div id="msBrowsePinned" class="ms-browse-pinned-grid"></div>
+      </section>
+      <section class="panel ms-browse-focus-panel" aria-labelledby="msBrowseFocusTitle">
+        <div class="ms-browse-heading"><div><p class="eyebrow">TODAY SUMMARY</p><h3 id="msBrowseFocusTitle">Focus metrics</h3><p class="small-note">Pin useful training stats to your Today screen, like focus metrics in Google Health and pinned categories in Apple Health.</p></div><span class="ms-browse-pill" id="msFocusCount">0 ON TODAY</span></div>
+        <div id="msBrowseFocusOptions" class="ms-browse-focus-options"></div>
+      </section>
+      <div class="ms-browse-groups" id="msBrowseGroups">
+        <section class="panel ms-browse-group" data-browse-group="training"><div class="ms-browse-heading"><div><p class="eyebrow">PLAN & MOVE</p><h3>Training</h3></div><span>01</span></div><div class="ms-browse-items">
+          <div class="ms-browse-item" data-browse-item data-search="planner schedule weekly calendar organize days"><button class="ms-browse-open" type="button" data-browse-open="planner"><span class="ms-browse-icon ms-tone-blue">▦</span><span class="ms-browse-copy"><b>Training planner</b><small>Organize your week and session days.</small></span><span class="ms-browse-arrow">›</span></button><button class="ms-browse-pin" type="button" data-browse-pin="planner" aria-label="Pin Training planner" aria-pressed="false">☆</button></div>
+          <div class="ms-browse-item" data-browse-item data-search="workout builder edit plan exercises sets reps"><button class="ms-browse-open" type="button" data-browse-open="builder"><span class="ms-browse-icon ms-tone-green">▤</span><span class="ms-browse-copy"><b>Workout builder</b><small>Edit plans, exercises and reusable templates.</small></span><span class="ms-browse-arrow">›</span></button><button class="ms-browse-pin" type="button" data-browse-pin="builder" aria-label="Pin Workout builder" aria-pressed="false">☆</button></div>
+          <div class="ms-browse-item" data-browse-item data-search="exercise guide library movements form alternatives"><button class="ms-browse-open" type="button" data-browse-open="guide"><span class="ms-browse-icon ms-tone-violet">⌁</span><span class="ms-browse-copy"><b>Exercise guide</b><small>Browse movement notes and alternatives.</small></span><span class="ms-browse-arrow">›</span></button><button class="ms-browse-pin" type="button" data-browse-pin="guide" aria-label="Pin Exercise guide" aria-pressed="false">☆</button></div>
+        </div></section>
+        <section class="panel ms-browse-group" data-browse-group="progress"><div class="ms-browse-heading"><div><p class="eyebrow">REVIEW & REFLECT</p><h3>Progress & history</h3></div><span>02</span></div><div class="ms-browse-items">
+          <div class="ms-browse-item" data-browse-item data-search="workout history saved sessions records log"><button class="ms-browse-open" type="button" data-browse-open="history"><span class="ms-browse-icon ms-tone-orange">◷</span><span class="ms-browse-copy"><b>Workout history</b><small>Review completed sessions and notes.</small></span><span class="ms-browse-arrow">›</span></button><button class="ms-browse-pin" type="button" data-browse-pin="history" aria-label="Pin Workout history" aria-pressed="false">☆</button></div>
+          <div class="ms-browse-item" data-browse-item data-search="progress records personal records milestones level"><button class="ms-browse-open" type="button" data-browse-open="progress"><span class="ms-browse-icon ms-tone-green">↗</span><span class="ms-browse-copy"><b>Progress overview</b><small>See milestones and training progress.</small></span><span class="ms-browse-arrow">›</span></button><button class="ms-browse-pin" type="button" data-browse-pin="progress" aria-label="Pin Progress overview" aria-pressed="false">☆</button></div>
+          <div class="ms-browse-item" data-browse-item data-search="insights charts analytics reports trends compare"><button class="ms-browse-open" type="button" data-browse-open="insights"><span class="ms-browse-icon ms-tone-cyan">⌁</span><span class="ms-browse-copy"><b>Training insights</b><small>Explore trends and compare sessions.</small></span><span class="ms-browse-arrow">›</span></button><button class="ms-browse-pin" type="button" data-browse-pin="insights" aria-label="Pin Training insights" aria-pressed="false">☆</button></div>
+        </div></section>
+        <section class="panel ms-browse-group" data-browse-group="personalize"><div class="ms-browse-heading"><div><p class="eyebrow">MAKE IT YOURS</p><h3>Personalization</h3></div><span>03</span></div><div class="ms-browse-items">
+          <div class="ms-browse-item" data-browse-item data-search="settings preferences timers backups data accessibility"><button class="ms-browse-open" type="button" data-browse-open="settings"><span class="ms-browse-icon ms-tone-slate">⚙</span><span class="ms-browse-copy"><b>Settings & data</b><small>Manage preferences, backups and accessibility.</small></span><span class="ms-browse-arrow">›</span></button><button class="ms-browse-pin" type="button" data-browse-pin="settings" aria-label="Pin Settings and data" aria-pressed="false">☆</button></div>
+        </div></section>
+      </div>
+      <p class="ms-browse-no-results" id="msBrowseNoResults" hidden>No matching sections. Try another search.</p>
+      <div class="ms-browse-footer"><span>YOUR DATA STAYS ON THIS DEVICE</span><span>Browse is a shortcut directory, not a new data source.</span></div>
+    </section>
+
+    <section id="historyView" class="view" aria-hidden="true">
+      <div class="section-heading"><div><p class="eyebrow">YOUR LOG</p><h2>Workout history</h2></div><button class="btn btn-outline btn-small" id="exportBtn">Export backup</button></div>
+      <div class="stats-grid" id="historyStats"></div><div class="filter-row"><input id="xHistorySearch" type="search" placeholder="Search workouts or exercises..." aria-label="Search workout history"><select id="xHistoryRange" aria-label="History date range"><option value="all">All history</option><option value="30">Last 30 days</option><option value="90">Last 90 days</option></select></div>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">CONSISTENCY</p><h3>Monthly activity</h3></div><div class="inline-controls"><button class="btn btn-quiet btn-small" id="xMonthPrev" aria-label="Previous month">←</button><span class="pill" id="monthName"></span><button class="btn btn-quiet btn-small" id="xMonthNext" aria-label="Next month">→</button></div></div><div id="heatmap" class="heatmap"></div><div class="legend"><span></span> Completed session <span class="legend-empty"></span> No session logged</div></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">RECENT SESSIONS</p><h3>Saved workouts</h3></div><button class="btn btn-quiet btn-small" id="copySummaryBtn">Copy latest summary</button></div><div id="historyList" class="history-list"></div></section>
+    </section>
+
+    <section id="progressView" class="view" aria-hidden="true">
+      <div class="section-heading"><div><p class="eyebrow">LONG-TERM VIEW</p><h2>Training progress</h2></div><span class="pill" id="levelPill">LEVEL 1</span></div>
+      <div class="stats-grid" id="progressStats"></div>
+      <section class="panel level-panel" id="levelPanel"><div class="level-top"><div><p class="eyebrow">YOUR TRAINING JOURNEY</p><h3 id="levelName">Level 1 · Getting Started</h3><p class="small-note" id="levelDescription">Build a steady, comfortable routine.</p></div><div class="level-number" id="levelNumber">01</div></div><div class="level-meter"><div class="level-meter-meta"><span id="levelXpLabel">0 / 500 XP</span><strong id="levelNextLabel">500 XP to next level</strong></div><div class="level-track"><span id="levelFill"></span></div></div><p class="small-note" id="levelReward">Next milestone: new profile title</p></section>
+      <section class="panel smart-panel"><div class="panel-heading"><div><p class="eyebrow">NEXORA FITNESS INSIGHTS</p><h3>Training snapshot</h3></div><span class="smart-dot">● LIVE DATA</span></div><div id="smartInsights" class="smart-insights"></div></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">RECOVERY CHECK-IN</p><h3>How are you feeling?</h3></div></div>
+        <div class="rating-row"><label for="energySelect">Energy before training</label><select id="energySelect"><option>Low</option><option selected>Okay</option><option>Good</option><option>Very good</option></select></div>
+        <div class="rating-row"><label for="sleepSelect">Sleep / rest quality</label><select id="sleepSelect"><option>Poor</option><option selected>Okay</option><option>Good</option><option>Very good</option></select></div>
+        <div class="rating-row"><label for="sorenessSelect">General soreness</label><select id="sorenessSelect"><option>None</option><option selected>Mild</option><option>Noticeable</option><option>High</option></select></div>
+        <button class="btn btn-primary" id="saveCheckinBtn">Save check-in</button>
+      </section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">MILESTONES</p><h3>Achievements</h3></div></div><div id="badgeGrid" class="badge-grid"></div></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">PERSONAL RECORDS</p><h3>Session highlights</h3></div><span class="pill">FROM YOUR LOGS</span></div><div id="xPersonalRecords" class="pr-grid"></div><p class="small-note">These are summaries of what you have logged, not targets you need to beat.</p></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">TRAINING NOTES</p><h3>Weekly focus</h3></div></div><textarea id="weeklyFocus" aria-label="Weekly training focus" rows="3" placeholder="A simple goal for this week, such as keeping a steady pace..."></textarea><button class="btn btn-outline btn-small" id="saveFocusBtn">Save focus</button></section>
+    </section>
+
+    <section id="plannerView" class="view" aria-hidden="true">
+      <div class="section-heading"><div><p class="eyebrow">WEEKLY OVERVIEW</p><h2>Training planner</h2></div><span class="pill">YOUR SCHEDULE</span></div>
+      <section class="panel planner-intro"><div><h3>Build a week that leaves room to recover.</h3><p class="small-note">Choose a simple focus for each day. Rest days are part of the plan, and you can change this schedule whenever you need.</p></div><button class="btn btn-outline btn-small" id="xResetPlanner">Restore starter week</button></section>
+      <div id="xPlannerGrid" class="planner-grid"></div>
+      <section class="panel planner-note"><h3>Weekly intention</h3><p class="small-note">Keep this flexible. A plan is a guide, not a rule.</p><textarea id="xPlannerFocus" aria-label="Weekly planner intention" rows="3" maxlength="240" placeholder="Example: Keep sessions comfortable and leave time for recovery."></textarea><button class="btn btn-primary btn-small" id="xSavePlannerFocus">Save weekly intention</button></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">PLAN CONNECTION</p><h3>Customize your workout days</h3></div><button class="btn btn-outline btn-small" id="xPlannerBuilder">Open workout builder</button></div><p class="small-note">Use the Builder tab to edit the exercises for Monday, Wednesday, Friday, or your optional Saturday session. The planner helps organize your week; it does not automatically increase workout difficulty.</p></section>
+    </section>
+
+    <section id="builderView" class="view" aria-hidden="true">
+      <div class="section-heading"><div><p class="eyebrow">PLAN EDITOR</p><h2>Workout builder</h2></div><span class="pill">CUSTOMIZE</span></div>
+      <section class="panel builder-toolbar"><div class="builder-controls"><label>Editing day<select id="xBuilderDay"><option>Monday</option><option>Wednesday</option><option>Friday</option><option>Saturday</option><option>Rest</option></select></label><label>Copy plan from<select id="xCopyDay"><option>Monday</option><option>Wednesday</option><option>Friday</option><option>Saturday</option><option>Rest</option></select></label><button class="btn btn-outline btn-small" id="xCopyPlanBtn">Copy day</button><label>Template<select id="xTemplate"><option value="keep">Choose template...</option><option value="balanced">Balanced starter</option><option value="bodyweight">Bodyweight basics</option><option value="mobility">Gentle mobility</option><option value="restore">Restore this day's starter plan</option></select></label><button class="btn btn-outline btn-small" id="xApplyTemplateBtn">Apply</button><button class="btn btn-primary btn-small" id="xAddExerciseBtn">+ Add exercise</button></div><p class="small-note" id="xBuilderStatus">Changes are saved in this browser. Reordering keeps each exercise's logged sets attached to it.</p></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">EXERCISE LIST</p><h3>Arrange your session</h3></div><input id="xBuilderSearch" type="search" placeholder="Find an exercise..." aria-label="Search exercises"></div><div id="xBuilderList" class="builder-list"></div></section>
+      <div class="two-col"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">WARM-UP BUILDER</p><h3>Warm-up drills</h3></div></div><textarea id="xWarmupEditor" aria-label="Warm-up routine instructions" rows="5" placeholder="One drill per line"></textarea><button class="btn btn-outline btn-small" id="xSaveWarmup">Save warm-up routine</button></section><section class="panel"><div class="panel-heading"><div><p class="eyebrow">COOL-DOWN BUILDER</p><h3>Cooldown activities</h3></div></div><textarea id="xCooldownEditor" aria-label="Cool-down routine instructions" rows="5" placeholder="One gentle activity per line"></textarea><button class="btn btn-outline btn-small" id="xSaveCooldown">Save cooldown routine</button></section></div>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">SAVED PLANS</p><h3>Reusable templates</h3></div></div><p class="small-note">Copy a day to another day, keep a balanced starter, or create your own plan. Choose comfortable movements and keep recovery days available.</p><div class="button-stack"><button class="btn btn-outline" id="xSaveTemplateBtn">Save current day as a named template</button><select id="xSavedTemplateSelect" aria-label="Choose a saved workout template"><option value="">Saved templates</option></select><button class="btn btn-outline" id="xLoadTemplateBtn">Load selected template</button></div></section>
+    </section>
+
+    <section id="insightsView" class="view" aria-hidden="true">
+      <div class="section-heading"><div><p class="eyebrow">YOUR TRAINING RECORD</p><h2>Insights & comparisons</h2></div><span class="pill">LOCAL DATA</span></div>
+      <div id="xWeeklySummary" class="stats-grid"></div>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">ACTIVITY</p><h3>Recent weekly sessions</h3></div></div><div id="xWeeklyChart" class="bar-chart" aria-label="Weekly workout history"></div></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">TRAINING RECORD</p><h3>Planned vs completed</h3></div></div><div id="xCompletionChart" class="bar-chart"></div></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">COMPARE</p><h3>Compare saved sessions</h3></div></div><div class="builder-controls"><label>Session A<select id="xCompareA"></select></label><label>Session B<select id="xCompareB"></select></label><button class="btn btn-outline btn-small" id="xCompareBtn">Compare</button></div><div id="xCompareOutput" class="compare-output"></div></section>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">EXERCISE HISTORY</p><h3>Rep trends</h3></div><select id="xTrendExercise" aria-label="Choose exercise for rep trend"></select></div><div id="xRepTrend" class="bar-chart"></div><div id="xExerciseConsistency" class="consistency-list"></div></section>
+      <div class="two-col"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">CHECK-INS</p><h3>Recovery timeline</h3></div></div><div id="xCheckinTimeline" class="timeline-list"></div></section><section class="panel"><div class="panel-heading"><div><p class="eyebrow">NOTES</p><h3>Training notes timeline</h3></div></div><div id="xNotesTimeline" class="timeline-list"></div></section></div>
+    </section>
+
+    <section id="guideView" class="view" aria-hidden="true">
+      <div class="section-heading"><div><p class="eyebrow">MOVEMENT REFERENCE</p><h2>Exercise guide & recovery</h2></div><div class="heading-actions"><button class="btn btn-outline btn-small" id="xSetupWizardOpenBtn">Setup wizard</button><button class="btn btn-outline btn-small" id="xTutorialBtn">App tutorial</button></div></div>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">EXERCISE LIBRARY</p><h3>Movement reference cards</h3></div><input id="xGuideSearch" type="search" placeholder="Search movements..." aria-label="Search movement guide"></div><div id="xGuideLibrary" class="guide-grid"></div></section>
+      <div class="two-col"><section class="panel"><div class="panel-heading"><div><p class="eyebrow">BEFORE TRAINING</p><h3>Comfort & readiness check</h3></div></div><label class="setting-row">How does movement feel today?<select id="xComfortSelect"><option value="ready">Comfortable and ready</option><option value="tired">A little tired</option><option value="sore">Noticeably sore</option><option value="uncomfortable">Something feels uncomfortable</option></select></label><p id="xComfortAdvice" class="small-note">Choose a comfortable pace and take breaks as needed.</p><div class="checklist-box"><b>Space and equipment checklist</b><label><input type="checkbox" class="xSetupCheck"> Floor and surrounding space are clear</label><label><input type="checkbox" class="xSetupCheck"> Chair/table or other support is stable</label><label><input type="checkbox" class="xSetupCheck"> Water is nearby</label><label><input type="checkbox" class="xSetupCheck"> I have enough space to move safely</label></div></section><section class="panel"><div class="panel-heading"><div><p class="eyebrow">RECOVERY</p><h3>Rest-day ideas</h3></div></div><p class="small-note">Rest is a normal part of a training routine. Optional activities should stay easy and comfortable.</p><ul class="guide-bullets"><li>Take an easy walk if it feels good.</li><li>Try gentle mobility without forcing a stretch.</li><li>Get regular meals, water and sleep.</li><li>Skip activity when you need extra rest.</li></ul><button class="btn btn-outline btn-small" id="xRecoveryReminderBtn">Set a rest-day reminder</button></section></div>
+      <section class="panel"><div class="panel-heading"><div><p class="eyebrow">LEARN THE APP</p><h3>Interactive tutorial</h3></div><span class="pill">5 STEPS</span></div><p class="small-note">Learn how to edit plans, log sets, use timers, save sessions and back up your data.</p><button class="btn btn-primary" id="xStartTutorialBtn">Start tutorial</button></section>
+    </section>
+
+    <section id="settingsView" class="view" aria-hidden="true">
+      <div class="section-heading"><div><p class="eyebrow">PERSONALIZE</p><h2>Settings</h2></div></div>
+      <div class="settings-search-row"><input id="xSettingsSearch" type="search" placeholder="Search settings..." aria-label="Search settings"><span id="xAppVersion" class="small-note">Version 9.7.0</span></div>
+      <div class="settings-grid">
+        <section class="panel nx-appearance-panel"><h3>Appearance</h3><p class="small-note">Choose a colour theme and adjust its glow. Other app preferences stay in their familiar settings sections.</p><label class="setting-row">Colour theme<select id="themeSelect"><option value="emerald">Emerald</option><option value="graphite">Ice Blue</option><option value="violet">Violet</option><option value="ember">Copper</option><option value="light">Pearl</option><option value="purple" hidden>Violet (legacy)</option><option value="crimson" hidden>Copper (legacy)</option><option value="blue" hidden>Ice Blue (legacy)</option></select></label><label class="setting-row">Accent glow<input id="glowSlider" type="range" min="0" max="100" value="65"></label><label class="setting-row">Enable high-contrast mode<input id="contrastToggle" type="checkbox"></label></section>
+        <section class="panel"><h3>Workout preferences</h3><label class="setting-row">Workout start<input id="startTimeInput" type="time" value="17:00"></label><label class="setting-row">Workout end<input id="endTimeInput" type="time" value="17:45"></label><label class="setting-row">Default rest (seconds)<input id="restInput" type="number" min="15" max="300" value="60"></label><label class="setting-row">Auto-start rest timer<input id="autoRestToggle" type="checkbox" checked></label><label class="setting-row">Voice coaching<input id="voiceToggle" type="checkbox"></label><label class="setting-row">Reduce sets (easy week)<input id="deloadToggle" type="checkbox"></label><label class="setting-row">Optional Saturday session<input id="saturdayToggle" type="checkbox"></label><label class="setting-row">Screen wake lock<input id="wakeToggle" type="checkbox"></label></section>
+        <section class="panel"><h3>Equipment available</h3><label class="setting-row"><span>Resistance bands</span><input type="checkbox" id="bandsToggle"></label><label class="setting-row"><span>Pull-up bar</span><input type="checkbox" id="barToggle"></label><label class="setting-row"><span>Adjustable dumbbells</span><input type="checkbox" id="adjustableToggle"></label><p class="small-note">Equipment switches only change suggested exercise alternatives. Use equipment as intended and ask a knowledgeable adult or coach about unfamiliar setups.</p></section>
+        <section class="panel"><h3>Data & shortcuts</h3><div class="button-stack"><button class="btn btn-outline" id="importBtn">Import backup file</button><input type="file" id="importFile" accept="application/json" hidden><button class="btn btn-outline" id="resetBtn">Reset today's checkmarks</button><button class="btn btn-outline" id="clearDataBtn">Clear local app data</button></div><p class="small-note">Data is stored in this browser on this device. Export a backup before clearing browser data.</p><p class="small-note">Keyboard: Space = start/pause timer · T = tempo pacer · Enter = check next set · Esc = exit focus mode.</p><a class="text-link" href="https://open.spotify.com/" target="_blank" rel="noopener">Open Spotify workout music ↗</a></section>
+        <section class="panel x-settings-panel"><h3>Accessibility & display</h3><label class="setting-row">Interface text size<select id="xFontScale"><option value="0.9">Small</option><option value="1" selected>Default</option><option value="1.1">Large</option><option value="1.2">Extra large</option></select></label><label class="setting-row">Focus mode text size<select id="xFocusFontScale"><option value="1">Default</option><option value="1.15">Large</option><option value="1.3">Extra large</option><option value="1.5">Maximum</option></select></label><label class="setting-row">Reduced motion<input type="checkbox" id="xReducedMotion"></label><label class="setting-row">Auto-scroll to next exercise<input type="checkbox" id="xAutoScroll" checked></label><label class="setting-row">One-hand layout<input type="checkbox" id="xOneHand"></label><label class="setting-row">Custom accent color<input type="color" id="xAccentColor" value="#34e2a2"></label><label class="setting-row">Show quick tools<input type="checkbox" id="xShowQuickTools" checked></label><button class="btn btn-outline btn-small" id="xResetAppearance">Reset appearance</button></section>
+        <section class="panel x-settings-panel"><h3>Interface & layout</h3>
+          <label class="setting-row">Color mode<select id="xColorMode"><option value="dark">Dark</option><option value="light">Light</option><option value="system">Follow device</option></select></label>
+          <label class="setting-row">Contrast level<select id="xContrastLevel"><option value="standard">Standard</option><option value="high">High contrast</option><option value="maximum">Maximum contrast</option></select></label>
+          <label class="setting-row">Font style<select id="xFontFamily"><option value="system">System default</option><option value="rounded">Rounded</option><option value="serif">Serif</option><option value="mono">Monospace</option></select></label>
+          <label class="setting-row">Interface density<select id="xDensity"><option value="comfortable">Comfortable</option><option value="compact">Compact</option><option value="spacious">Spacious</option></select></label>
+          <label class="setting-row">Corner style<select id="xCorners"><option value="rounded">Rounded</option><option value="soft">Soft</option><option value="square">Square</option></select></label>
+          <label class="setting-row">Content width<select id="xContentWidth"><option value="standard">Standard</option><option value="wide">Wide</option><option value="narrow">Narrow</option></select></label>
+          <label class="setting-row">Always show button labels<input type="checkbox" id="xButtonLabels" checked></label>
+          <label class="setting-row">Underline links<input type="checkbox" id="xUnderlineLinks"></label>
+          <label class="setting-row">Reduce transparency<input type="checkbox" id="xReduceTransparency"></label>
+          <label class="setting-row">Disable gradients<input type="checkbox" id="xFlatSurfaces"></label>
+          <label class="setting-row">Thicker focus outline<input type="checkbox" id="xThickFocus"></label>
+          <label class="setting-row">Sticky top bar<input type="checkbox" id="xStickyHeader" checked></label>
+        </section>
+        <section class="panel x-settings-panel"><h3>Dashboard preferences</h3>
+          <label class="setting-row">Dashboard greeting<select id="xGreeting"><option value="motivational">Daily brief</option><option value="minimal">Minimal</option><option value="coach">Coach tone</option></select></label>
+          <label class="setting-row">Show dashboard statistics<input type="checkbox" id="xShowStats" checked></label>
+          <label class="setting-row">Show quick-start cards<input type="checkbox" id="xShowLaunchpad" checked></label>
+          <label class="setting-row">Show daily coaching note<input type="checkbox" id="xShowCoach" checked></label>
+          <label class="setting-row">Show recovery checklist<input type="checkbox" id="xShowRecovery" checked></label>
+          <label class="setting-row">Confirm before finishing a workout<input type="checkbox" id="xConfirmFinish" checked></label>
+          <label class="setting-row">Keep completed exercises expanded<input type="checkbox" id="xKeepExpanded"></label>
+          <label class="setting-row">Default guide detail<select id="xGuideDetail"><option value="simple">Simple explanations</option><option value="detailed">Detailed cues</option></select></label>
+        </section>
+        <section class="panel x-settings-panel"><h3>Timer & notifications</h3><label class="setting-row">Tempo lower (seconds)<input type="number" id="xTempoDown" min="1" max="10" value="3"></label><label class="setting-row">Tempo hold (seconds)<input type="number" id="xTempoHold" min="0" max="5" value="1"></label><label class="setting-row">Tempo lift (seconds)<input type="number" id="xTempoUp" min="1" max="10" value="1"></label><label class="setting-row">Timer sound level<input type="range" id="xSoundVolume" min="0" max="100" value="35"></label><label class="setting-row">Vibrate when timer ends<input type="checkbox" id="xVibrate"></label><label class="setting-row">Browser timer notifications<input type="checkbox" id="xNotifications"></label><button class="btn btn-outline btn-small" id="xPreviewSound">Preview sound</button><button class="btn btn-outline btn-small" id="xNotificationPermission">Enable notifications</button></section>
+        <section class="panel x-settings-panel"><h3>Data, storage & diagnostics</h3><p id="xStorageUsage" class="small-note">Storage usage: calculating...</p><p id="xOfflineStatus" class="small-note">Connection status: checking...</p><p id="xDiagnostics" class="small-note">Diagnostics have not run yet.</p><div class="button-stack"><button class="btn btn-outline" id="xRunDiagnostics">Run app diagnostics</button><button class="btn btn-outline" id="xBackupPreviewBtn">Preview current backup</button><button class="btn btn-outline" id="xPwaHelpBtn">PWA / install help</button><button class="btn btn-outline" id="xSetupWizardBtn">First-time setup wizard</button><button class="btn btn-outline" id="xRestoreSettings">Restore default settings</button></div><p class="small-note">Your workout data stays in this browser unless you export it. Browser storage can be cleared by the device or browser.</p></section>
+        <section class="panel x-settings-panel"><h3>Timer presets & interval builder</h3><div class="builder-controls"><input id="xPresetName" aria-label="Timer preset name" type="text" maxlength="24" placeholder="Preset name"><input id="xPresetSeconds" aria-label="Timer preset length in seconds" type="number" min="1" max="3600" value="60"><button class="btn btn-outline btn-small" id="xSavePreset">Save preset</button></div><div id="xPresetList" class="preset-list"></div><div class="builder-controls"><label>Work seconds<input type="number" id="xIntervalWork" min="1" max="600" value="20"></label><label>Rest seconds<input type="number" id="xIntervalRest" min="1" max="600" value="10"></label><label>Rounds<input type="number" id="xIntervalRounds" min="1" max="20" value="4"></label><button class="btn btn-outline btn-small" id="xStartIntervals">Start intervals</button></div><div class="builder-controls"><label>Chain seconds<input type="number" id="xChainSeconds" min="1" max="3600" value="60"></label><button class="btn btn-outline btn-small" id="xAddChainStep">Add chain step</button><button class="btn btn-outline btn-small" id="xRunChain">Run timer chain</button></div><div id="xChainList" class="small-note">No timer steps added.</div></section>
+      </div>
+    </section>
+
+    <footer class="app-footer" aria-label="Application information"><span>NEXORA FITNESS 9.7.0 / HEALTH & TRAINING</span><span>Health. Training. Progress.</span></footer>
+  </main>
+
+  <div class="focus-overlay" id="focusOverlay" hidden><button class="icon-btn exit-focus" id="exitFocusBtn" aria-label="Exit focus mode">✕</button><p class="eyebrow">FOCUS MODE</p><h2 id="focusExerciseName">Current exercise</h2><div class="focus-timer" id="focusTimer">00:00</div><p id="focusSetLabel">Ready when you are</p><div class="focus-actions"><button class="btn btn-primary" id="focusStartBtn">Start timer</button><button class="btn btn-outline" id="focusNextBtn">Next set</button></div></div>
+
+  <dialog id="editDialog" class="modal"><form method="dialog" id="editForm"><div class="modal-head"><div><p class="eyebrow">WORKOUT BUILDER</p><h2>Edit today's plan</h2></div><button class="icon-btn" value="cancel" aria-label="Close">✕</button></div><label>Exercise name<input id="editName" required maxlength="60"></label><div class="form-two"><label>Sets<input id="editSets" type="number" min="1" max="8" required></label><label>Target reps / seconds<input id="editReps" type="number" min="1" max="120" required></label></div><label>Phase<select id="editPhase"><option>Warm-up</option><option>Strength</option><option>Core</option><option>Cool-down</option></select></label><label>Form cues<textarea id="editCues" rows="3"></textarea></label><div class="modal-actions"><button class="btn btn-quiet" value="cancel">Cancel</button><button class="btn btn-primary" id="saveExerciseBtn" value="default">Save exercise</button></div></form></dialog>
+  <dialog id="snackDialog" class="modal"><form method="dialog"><div class="modal-head"><h2>Quick snack ideas</h2><button class="icon-btn" value="cancel">✕</button></div><ul class="snack-list"><li>Banana and peanut butter toast</li><li>Greek yogurt with fruit</li><li>Cheese and crackers</li><li>Egg on toast</li><li>Hummus with pita or vegetables</li></ul><p class="small-note">Choose something you enjoy and that suits your appetite. No special meal or supplement is required for this tracker.</p><button class="btn btn-primary" value="cancel">Close</button></form></dialog>
+  <dialog id="xExerciseDialog" class="modal"><form id="xExerciseForm"><div class="modal-head"><div><p class="eyebrow">PLAN EDITOR</p><h2 id="xExerciseDialogTitle">Add exercise</h2></div><button class="icon-btn" type="button" id="xCloseExercise">✕</button></div><label>Exercise name<input id="xExerciseName" maxlength="60" required></label><div class="form-two"><label>Sets<input id="xExerciseSets" type="number" min="1" max="8" value="2" required></label><label>Target reps / seconds<input id="xExerciseReps" type="number" min="1" max="120" value="8" required></label></div><div class="form-two"><label>Phase<select id="xExercisePhase"><option>Strength</option><option>Core</option><option>Warm-up</option><option>Cool-down</option></select></label><label>Unit<select id="xExerciseUnit"><option value="reps">Reps</option><option value="sec">Seconds</option><option value="min">Minutes</option></select></label></div><div class="form-two"><label>Category<input id="xExerciseCategory" maxlength="30" placeholder="e.g. Push"></label><label>Equipment<input id="xExerciseEquipment" maxlength="50" placeholder="e.g. None / dumbbell"></label></div><div class="form-two"><label>Difficulty<select id="xExerciseDifficulty"><option>Beginner-friendly</option><option>Moderate</option><option>More challenging</option></select></label><label>Rest seconds<input id="xExerciseRest" type="number" min="0" max="300" value="60"></label></div><label>Form cues (one per line)<textarea id="xExerciseCues" rows="3"></textarea></label><label>Alternative movement<input id="xExerciseAlternative" maxlength="80" placeholder="Optional alternative"></label><div class="modal-actions"><button class="btn btn-quiet" type="button" id="xCancelExercise">Cancel</button><button class="btn btn-primary" type="submit">Save exercise</button></div></form></dialog>
+  <dialog id="xBackupDialog" class="modal"><form method="dialog"><div class="modal-head"><h2>Backup preview</h2><button class="icon-btn" value="cancel">✕</button></div><pre id="xBackupPreview" class="backup-preview"></pre><div class="modal-actions"><button class="btn btn-quiet" value="cancel">Close</button><button class="btn btn-primary" type="button" id="xConfirmBackupImport" hidden>Import this backup</button></div></form></dialog>
+  <dialog id="xSetupDialog" class="modal"><form id="xSetupForm"><div class="modal-head"><div><p class="eyebrow">FIRST-TIME SETUP</p><h2>Set up your tracker</h2></div><button class="icon-btn" type="button" id="xSetupClose">✕</button></div><p class="small-note">Choose the time window that suits your schedule. You can change these options later in Settings.</p><label>Start time<input type="time" id="xSetupStart" value="17:00"></label><label>End time<input type="time" id="xSetupEnd" value="17:45"></label><label>Default rest in seconds<input type="number" id="xSetupRest" min="15" max="300" value="60"></label><div class="modal-actions"><button class="btn btn-quiet" type="button" id="xSetupSkip">Skip setup</button><button class="btn btn-primary" type="submit">Save setup</button></div></form></dialog><dialog id="xTutorialDialog" class="modal"><form method="dialog"><div class="modal-head"><div><p class="eyebrow">QUICK TOUR</p><h2 id="xTutorialTitle">Welcome</h2></div><button class="icon-btn" value="cancel">✕</button></div><p id="xTutorialText" class="tutorial-copy"></p><div class="tutorial-progress" id="xTutorialProgress"></div><div class="modal-actions"><button class="btn btn-quiet" type="button" id="xTutorialBack">Back</button><button class="btn btn-primary" type="button" id="xTutorialNext">Next</button></div></form></dialog>
+  <dialog id="createWorkoutDialog" class="modal create-workout-modal"><form id="createWorkoutForm"><div class="modal-head"><div><p class="eyebrow">CUSTOM WORKOUT</p><h2>Create something new</h2></div><button class="icon-btn" type="button" id="closeCreateWorkout" aria-label="Close">✕</button></div><p class="small-note">Build a separate routine without changing your Monday, Wednesday, Friday, or other weekly plans.</p><label>Workout name<input id="customWorkoutName" maxlength="48" required placeholder="e.g. Upper body session"></label><div class="custom-exercise-entry"><label>Search exercise library<input id="customLibrarySearch" type="search" placeholder="Filter movement library…"></label><label>Choose from exercise library<select id="customLibrarySelect"><option value="">Choose from exercise library…</option></select></label><label>Or enter a custom exercise<input id="customExerciseName" maxlength="60" placeholder="e.g. Incline push-up"></label><div class="form-two"><label>Sets<input id="customExerciseSets" type="number" min="1" max="8" value="2"></label><label>Target<input id="customExerciseReps" type="number" min="1" max="120" value="8"></label></div><div class="form-two"><label>Unit<select id="customExerciseUnit"><option value="reps">Reps</option><option value="sec">Seconds</option><option value="min">Minutes</option></select></label><label>Rest after set (seconds)<input id="customExerciseRest" type="number" min="0" max="300" value="60"></label></div><div class="form-two"><label>Phase<select id="customExercisePhase"><option>Strength</option><option>Warm-up</option><option>Core</option><option>Cool-down</option></select></label><label>Category<select id="customExerciseCategory"><option>General</option><option>Push</option><option>Pull</option><option>Legs</option><option>Shoulders</option><option>Core</option><option>Recovery</option><option>Mobility</option></select></label></div><button class="btn btn-outline btn-small" type="button" id="addCustomExercise">+ Add exercise</button></div><div class="custom-exercise-list" id="customExerciseList"><p class="small-note">No exercises added yet.</p></div><div class="v81-schedule-entry"><label>Optional schedule date<input id="customScheduleDate" type="date"></label><small>Scheduling a custom routine does not replace your weekly plan.</small></div><div class="modal-actions"><button class="btn btn-quiet" type="button" id="cancelCreateWorkout">Cancel</button><button class="btn btn-primary" type="submit">Save new workout</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <div id="confettiLayer" class="confetti-layer" aria-hidden="true"></div>
+  <script src="app.js" defer></script>
+  <script src="version81.js" defer></script>
+  <script src="version9.js" defer></script>
+  <script src="version91.js" defer></script>
+  <script src="version92.js" defer></script>
+  <script src="version93.js" defer></script>
+  <script src="version94.js" defer></script>
+  <script src="morphset.js" defer></script>
+  <script src="version96.js" defer></script>
+  <script src="version962.js" defer></script>
+  <script src="version97.js" defer></script>
+  <script src="version98.js" defer></script>
+  <script src="interactions982.js" defer></script>
+  <script src="appearance983.js" defer></script>
+  <script src="version99.js" defer></script>
+  <script src="logo-motion991.js" defer></script>
+  <script src="v100-redesign.js" defer></script>
+</body>
+</html>
